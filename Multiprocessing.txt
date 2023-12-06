@@ -1,0 +1,56 @@
+1.
+Multiprocessing refers to the ability of a program to create and run multiple processes concurrently. Each process has its own memory space, resources and Python interpreter. 
+The multiprocessing module in Python provides a way to create and manage processes
+It is useful for tasks that can be parallelized as it can lead to improved performance on multi-core systems. Multiprocessing allows programs to take advantage of multiple processors, utilizing different CPU cores to perform tasks simultaneously, which can significantly speed up the execution of certain types of programs
+
+2.
+Multiprocessing:
+Involves creating multiple processes each with its own memory space.
+Processes run independently
+Communication between processes is typically achieved using inter-process communication (IPC) mechanisms.
+Ideal for CPU-bound tasks, as each process can run on a separate CPU core.
+
+Multithreading:
+Involves creating multiple threads within a single process sharing the same memory space.
+Threads within a process share resources and the Python Global Interpreter Lock (GIL), which can limit true parallelism.
+Communication between threads is easier but can lead to issues like race conditions and requires synchronization.
+Suitable for I/O-bound tasks, as threads can be managed more efficiently during waiting periods
+
+3.
+import multiprocessing
+def my_function():
+    print("Executing in a separate process.")
+if __name__ == "__main__":
+    my_process = multiprocessing.Process(target=my_function)
+    my_process.start()
+    my_process.join()
+    print("Main process continues.")
+4.
+Multiprocessing pool in Python, provided by the multiprocessing module, is a way to parallelize the execution of a function across multiple input values. 
+It distributes the input data among a specified number of worker processes, allowing them to work on different chunks of the data simultaneously.
+This is useful for parallelizing tasks that can be broken down into independent subtasks
+
+5.
+import multiprocessing
+def my_function(x):
+    return x * x
+if __name__ == "__main__":
+   with multiprocessing.Pool(processes=4) as pool:
+        data = [1, 2, 3, 4, 5]
+        results = pool.map(my_function, data)
+    print("Results:", results)
+
+6.import multiprocessing
+def print_number(num):
+    print(f"Process {num}: My number is {num}")
+if __name__ == "__main__":
+    processes = []
+    for i in range(4):
+        process = multiprocessing.Process(target=print_number, args=(i,))
+        processes.append(process)
+        process.start()
+    for process in processes:
+        process.join()
+    print("Main process continues.")
+
+
