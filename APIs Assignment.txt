@@ -1,0 +1,68 @@
+1.
+
+API
+Api stands for applicaion programming interface
+it is a tool for software application that provides communication between the applications
+APIs are used to enable the integration of differnt applications so as to work together
+Real life uasge of API is Wheather API
+In Wheather API Wheather application is client and Wheather API is Server
+
+2.
+Advantages:
+1) Scalability
+2) Efficiency
+3) Interperobility
+4) Innovation
+Disadvantages:
+1) Security Concerns
+2) Dependancy
+3) Documentation Maintainence
+4) Limeted Control
+
+3.
+
+Web API:
+it stands for web Application Programming Interface
+It is a tool for different software application over the web
+It is accessed by using HTTP or HTTPs protocols
+
+APIs                                                     Web APIs
+-> it is a tool for software application               -> It is a tool for different software application over the web
+that provides communication between the applications
+-> APIs are used to enable the integration of          -> It is accessed by using HTTP or HTTPs protocols
+differnt applications so as to work together
+-> communication between different components of        -> communication between different components of web applicatioms
+a single application 
+
+4.
+
+REST (Representational State Transfer):
+REST is an architectural style for designing networked applications. 
+In a REST architecture, resources are identified by URIs, and interactions are stateless.
+ RESTful services use standard HTTP methods (GET, POST, PUT, DELETE) for communication and typically return data in a lightweight format like JSON or XML.
+Flexibility
+Simple and Scalable
+
+SOAP (Simple Object Access Protocol):
+SOAP is a protocol for exchanging structured information in web services. 
+It uses XML as its message format and relies on HTTP, SMTP, or other transport protocols.
+SOAP services are described using Web Services Description Language (WSDL)
+
+Short Comings are :
+Complex
+Not Flexible
+Light Weight
+Performance
+
+5.
+
+REST                                                       SOAP
+Stateless                                                 Stateful
+HTTP protocols is used                                    HTTP And SMTP protocol
+More Flexible                                             less Felsxible
+Simple                                                    Complex
+RESTful Web services                                      SOAP web services
+High Scalability                                          Low Scalability
+
+
+6.
