@@ -1,0 +1,125 @@
+1.
+
+We have to use the Exception class while creating a Custom Exception
+to inherit the all the features from the exception class 
+or we can say base class to the custom exception class or we can say child class  of the program
+if we dont use exception class then we can write efficent code i,e we cannot inhert the features that will be present in Excepetion  
+class
+so it is necessary to use Exception class while creating Custom Exception
+
+
+2.
+
+def exception_hierarchy():
+    for exception in sorted(Exception.__subclasses__(), key=lambda x: x.__name__):
+        print(exception.__name__)
+
+exception_hierarchy()
+
+3.
+
+
+errors defined in the ArithmeticError class are
+1) DivisionByZero
+2) ValueError
+  
+DivisionByZero
+When any number is divided by zero the we get DivisionByZero Error 
+try:
+    result = 5 / 0
+except ZeroDivisionError as e:
+    print(f"Error: {e}")
+
+ValueError
+When we are trying to convert a string into interger we get Value Error
+try:
+    result = int("abc")
+except ValueError as e:
+    print(f"Error: {e}")
+
+4.
+
+
+LookupError class is a Base class that is used to derive the sub classes 
+namely
+1)IndexError class
+2)KeyErrror Class
+
+IndexError class and KeyErrror Class are the derived classes of LookUpError Class
+
+
+Example for keyError :
+try:
+	d = {"sam":1,"Boss":2}
+	print(d[sameer])
+except KeyError as e:
+	print(e)
+example for IndexError
+try:
+	l=[12,3,4,5,6]
+	print(l[9])
+except IndexError as e:
+	print(e)
+
+
+5.
+
+
+import error occurs when we are importing something that is not existing in the python library
+for example
+try :
+import sameer
+except exception as e:
+print(e)
+ModuleNotFoundError is a kind of error which occurs when we arre importing a undefined file 
+ModuleNotFoundError will come in the output
+example:
+try :
+import sameer
+except ModuleNotFoundError as e:
+print(e)
+output: ModuleNotFoundError
+
+
+
+
+
+6.some best practices for exception handling in python are 
+1) ZeroDivisionError
+try:
+    result = 5 / 0
+except ZeroDivisionError as e:
+    print(f"Error: {e}")
+2)ValueError 
+try:
+    result = int("abc")
+except ValueError as e:
+    print(f"Error: {e}")
+3) ImportError
+try :
+	import sameer
+except exception as e:
+	print(e)
+4)FileNotFoundError
+try:
+	withopen("txt.t","r") as f 
+	test = f.write()
+except FileNotFoundError as e:
+	print(e)
+5)TypeError
+try:
+	123 = "sudh"
+except TypeError as e:
+	print(e)
+6)IndexError
+try:
+	l=[12,3,4,5,6]
+	print(l[9])
+except IndexError as e:
+	print(e)
+
+
+
+
+
+
