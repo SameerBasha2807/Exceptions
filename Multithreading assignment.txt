@@ -1,0 +1,64 @@
+
+1.
+Multithreading in Python refers to the concurrent execution of multiple threads (smaller units of a process) 
+to achieve parallelism and improve overall program performance. 
+Each thread represents a separate flow of control within the same process, sharing the same resources but running independently. 
+-->
+It is used to acheive 
+parallelism
+I/O operations 
+Responsiveness
+-->
+thtreading is the module used to handle threads
+
+2.
+Threading is used to create and manage the threads of the program 
+activeCount() :This tells about the active count of the threads alive
+currentThread(): This gives the object of the current thread of the program 
+enumerate():it gives the information of all objects that are currently alive 
+  
+3.
+run(): This method represents the code to be executed by a thread when it's started.
+start(): This function is used to start the execution of a thread
+join(): This function is used to wait for the completion of the exceution of the thread
+isAlive(): this function is used to check whether the Thread is alive or not
+
+4.
+import threading
+
+def print_squares():
+    for i in range(1, 6):
+        print(f"Square of {i}: {i*i}")
+
+def print_cubes():
+    for i in range(1, 6):
+        print(f"Cube of {i}: {i*i*i}")
+thread1 = threading.Thread(target=print_squares)
+thread2 = threading.Thread(target=print_cubes)
+thread1.start()
+thread2.start()
+thread1.join()
+thread2.join()
+
+print("Both threads have finished.")
+
+5.
+
+Advantages :
+Improved Performance: Multithreading can lead to improved performance by allowing concurrent execution of tasks, especially in I/O-bound and parallelizable computations.
+Responsiveness: Multithreading can enhance the responsiveness of applications, ensuring that the user interface remains active even during background processing.
+
+Disadvantages:
+Global Interpreter Lock (GIL): In Python, the Global Interpreter Lock limits the effectiveness of multithreading for CPU-bound tasks. Only one thread can execute Python bytecode at a time in a single process.
+Complexity: Multithreading introduces complexity, making code harder to write, understand, and debug. Synchronization and coordination between threads can lead to subtle bugs.
+
+
+6.
+
+Deadlock:
+Definition: A deadlock occurs when two or more threads are blocked forever, each waiting for the other to release a resource.
+Cause: It typically happens when multiple threads hold resources and are waiting for each other to release resources. None of the threads can proceed, leading to a deadlock.
+
+Race Condition:
+Definition: A race condition occurs when the behavior of a program depends on the relative timing of events, such as the order in which threads are scheduled to run.
+Cause: It happens when multiple threads access shared data concurrently, and the final outcome depends on the order of execution
